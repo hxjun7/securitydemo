@@ -1,4 +1,4 @@
-package com.huawei.uee.user;
+﻿package com.huawei.uee.user;
 
 public class User
 {

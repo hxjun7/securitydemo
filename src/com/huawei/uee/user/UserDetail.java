@@ -26,22 +26,22 @@ public class UserDetail extends HttpServlet
 		String editPath = "EditUserDetail.jsp";
 		String username = request.getParameter("username") ;
 		String opermode = request.getParameter("opermode") ;
-		User user = new User();
-		user.setUsername(username);
-		List<User> users = null;
-		try
-		{
-			users = DAOFactory.getUserDAOInstance().selectUsersByUsername(user.getUsername());
-		} catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		user = users.get(0);
-		System.out.println(user.getAge());
-		
-		//将用户信息存入session
-		HttpSession session = request.getSession();
-		session.setAttribute("user",user) ;
+//		User user = new User();
+//		user.setUsername(username);
+//		List<User> users = null;
+//		try
+//		{
+//			users = DAOFactory.getUserDAOInstance().selectUsersByUsername(user.getUsername());
+//		} catch (Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+//		user = users.get(0);
+//		System.out.println(user.getAge());
+//		
+//		//将用户信息存入session
+//		HttpSession session = request.getSession();
+//		session.setAttribute("user",user) ;
 		
 		if(opermode.equals("view"))
 		{

@@ -5,12 +5,13 @@
 <html>
   <head>
  <%User user = (User)session.getAttribute("user"); %> 
+ <%request.setCharacterEncoding("UTF-8") ;%>
  <%-- user.setUsername("<script>alert(123)</script>");--%>
   </head>
   
   <body>
 <br/>
-用户<%=user.getUsername()%>的个人信息：
+<p>用户<%=user.getUsername()%>的个人信息：</p>
   	<form action="EditUserDetail" method="post">
 		<table border="1">
 			<tr>
@@ -33,7 +34,21 @@
 				<td><input type="text" name="description" value="<%=user.getDescription()%>"></input></td>
 			</tr>
 		</table>
-		<input type="submit" value="提交个人信息"/>
+		<br/>
+		<input type="submit" value="提交"/>
+	</form>
+	
+	<br/>
+	<br/>
+	<br/>
+	<p>转账功能：</p>
+	<form action="TransferAccounts" method="get">
+	
+	<input type="hidden" name="fromUsername" value="<%=user.getUsername()%>"></input>
+	用户名：<input type="text" name="toUsername" value=""></input>
+	转账金额：<input type="text" name="reduceMoney" value=""></input>
+	<input type="submit" value="转账"></input>
+	
 	</form>
   
   </body>

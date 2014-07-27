@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-  
+  <%request.setCharacterEncoding("UTF-8") ;%>
   </head>
   
   <body>
@@ -18,9 +18,10 @@
 			</tr>
 		</table>
 	</form>
-	<p/>
-	<p/>
-  	<form action="viewJohnDetail.jsp" method="get">
+	<br/>
+	<br/>
+	
+  	<form action="UserDetail" method="get">
 		<table border="0">
 			<tr>
 				<td><p>john的个人信息</p></td>
@@ -30,8 +31,22 @@
 			</tr>
 		</table>
 	</form>
-	<p/>
-	<p/>
+	<br/>
+	<br/>
+	
+	<form action="UserDetail" method="get">
+		<table border="0">
+			<tr>
+				<td><p>smith的个人信息</p></td>
+				<td><input type="hidden" name="username" value="smith" /></td>
+				<td><input type="hidden" name="opermode" value="view" /></td>
+				<td><input type="submit" value="查看"/></td>
+			</tr>
+		</table>
+	</form>
+	<br/>
+	<br/>
+	
 	<form action="UserDetail" method="get">
 		<input type="hidden" name="username" value="manager" />
 		<td><input type="hidden" name="opermode" value="edit" /></td>

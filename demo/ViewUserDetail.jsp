@@ -5,6 +5,7 @@
 <html>
   <head>
  <% User user = (User)session.getAttribute("user"); %> 
+ <%request.setCharacterEncoding("UTF-8") ;%>
  <%-- user.setUsername("<script>alert(123)</script>");--%>
   </head>
   
@@ -32,26 +33,7 @@
 				<td><p>description</p></td>
 				<td><p><%=user.getDescription()%></p></td>
 			</tr>
-		</table>
-		
+		</table>		
 	</form>
-	<p/>
-	<p/>
-  	<form action="viewJohnDetail.jsp" method="get">
-		<table border="0">
-			<tr>
-				<td><p>john的个人信息</p></td>
-				<td><input type="hidden" name="username" value="john" /></td>
-				<td><input type="submit" value="查看"/></td>
-			</tr>
-		</table>
-	</form>
-	<p/>
-	<p/>
-	<form action="editManagerDetail.jsp" method="get">
-		<input type="hidden" name="username" value="manager" />
-		<input type="submit" value="编辑个人信息"/>
-	</form>
-  
   </body>
 </html>

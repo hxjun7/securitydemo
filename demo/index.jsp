@@ -6,9 +6,7 @@
   </head>
   
   <body>
-  
-  
-  
-    This is my JSP page. <br>
+  <p> success !</p><br/>
+  <br/>
   </body>
 </html>

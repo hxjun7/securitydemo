@@ -5,6 +5,19 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name></display-name>
+  
+   
+  
+   <filter>
+   	 <filter-name>LoginFilter</filter-name>
+   	 <filter-class>com.huawei.uee.login.LoginFilter</filter-class>
+   </filter>
+   <filter-mapping>
+   	 <filter-name>LoginFilter</filter-name>
+   	 <url-pattern>/demo/*</url-pattern>
+   </filter-mapping>
+  
+  
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
@@ -45,7 +58,15 @@
     <url-pattern>/UserDetail</url-pattern>
   </servlet-mapping>
   
-  
+  <servlet>
+    <servlet-name>TransferAccounts</servlet-name>
+    <servlet-class>com.huawei.uee.transfer.TransferAccounts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TransferAccounts</servlet-name>
+    <url-pattern>/TransferAccounts</url-pattern>
+  </servlet-mapping>
+ 
   
   
   
