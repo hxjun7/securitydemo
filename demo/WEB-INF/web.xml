@@ -36,6 +36,19 @@
     <url-pattern>/EditUserDetail</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>UserDetail</servlet-name>
+    <servlet-class>com.huawei.uee.user.UserDetail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDetail</servlet-name>
+    <url-pattern>/UserDetail</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

@@ -5,7 +5,7 @@
 <html>
   <head>
  <% User user = (User)session.getAttribute("user"); %> 
- <% user.setUsername("<script>alert(123)</script>");%>
+ <%-- user.setUsername("<script>alert(123)</script>");--%>
   </head>
   
   <body>

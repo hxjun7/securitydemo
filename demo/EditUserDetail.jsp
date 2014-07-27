@@ -11,7 +11,7 @@
   <body>
 <br/>
 用户<%=user.getUsername()%>的个人信息：
-  	<form action="EditUserDetail" method="get" border="0">
+  	<form action="EditUserDetail" method="post">
 		<table border="1">
 			<tr>
 				<td><p>username</p></td>
