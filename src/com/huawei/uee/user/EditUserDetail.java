@@ -1,7 +1,6 @@
 package com.huawei.uee.user;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,13 +21,14 @@ public class EditUserDetail extends HttpServlet
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
-		String path = "EditUserDetail.jsp" ;
+		String path = "index.jsp" ;
 		String username = request.getParameter("username") ;
 		int age = Integer.parseInt(request.getParameter("age")) ;
 		int money = Integer.parseInt(request.getParameter("money")) ;
 		String description = request.getParameter("description") ;
 		
-		User user = new User();
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("user");
 		user.setUsername(username);
 		user.setAge(age);
 		user.setMoney(money);
@@ -39,13 +39,9 @@ public class EditUserDetail extends HttpServlet
 			DAOFactory.getUserDAOInstance().updateUser(user);
 		} catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println(user.getAge());
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("user",user) ;
 		
 		request.getRequestDispatcher(path).forward(request,response) ;
 	}

@@ -27,7 +27,6 @@ public class Login extends HttpServlet
 			throws ServletException, IOException
 	{
 		
-		String path = "login.jsp" ;
 		String username = request.getParameter("username") ;
 		String password = request.getParameter("password") ;
 		// 收集错误信息
@@ -47,12 +46,16 @@ public class Login extends HttpServlet
 			try{
 				if(DAOFactory.getUserDAOInstance().isVaildUser(user))
 				{
-					info.add("用户登陆成功，欢迎" + user.getUsername() + "光临！") ;
-					
-					request.setAttribute("info",info) ;
-					request.getRequestDispatcher(path).forward(request,response) ;
+					if(user.getUsername().equals("manager"))
+					{
+						request.getRequestDispatcher("manager.jsp").forward(request,response) ;
+					}else{
+						request.getRequestDispatcher("ViewUserDetail.jsp").forward(request,response) ;
+					}
 					return;
+					
 				} else {
+					String path="login.jsp";
 					info.add("用户登陆失败，错误的用户名或密码！") ;
 					request.setAttribute("info",info) ;
 					request.getRequestDispatcher(path).forward(request,response) ;
