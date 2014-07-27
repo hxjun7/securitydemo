@@ -30,7 +30,7 @@
 	</form>
 	<p/>
 	<p/>
-	<form action="editManagerDetail.jsp" method="get">
+	<form action="EditUserDetail" method="get">
 		<input type="hidden" name="username" value="manager" />
 		<input type="submit" value="编辑个人信息"/>
 	</form>

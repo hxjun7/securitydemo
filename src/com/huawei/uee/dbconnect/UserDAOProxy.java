@@ -43,6 +43,17 @@ public class UserDAOProxy implements UserDAO {
 		return users ;
 	}
 	
+	public void updateUser(User user) throws Exception
+	{
+		try{
+			this.dao.updateUser(user) ;
+		}catch(Exception e){
+			throw e ;
+		}finally{
+			this.dbc.close() ;
+		}
+	}
+	
 	public boolean doCreate(User user) throws Exception{
 		boolean flag = false ;
 		try{

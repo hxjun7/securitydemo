@@ -61,6 +61,17 @@ public class UserDAOImpl implements UserDAO {
 		return users;
 	}
 	
+	public void updateUser(User user) throws Exception
+	{
+		String sql = "UPDATE T_UEE_USER SET age=?,money=?,description=? WHERE username=?";
+		this.pstmt = this.conn.prepareStatement(sql) ;
+		this.pstmt.setInt(1, user.getAge());
+		this.pstmt.setInt(2, user.getMoney());
+		this.pstmt.setString(3, user.getDescription());
+		this.pstmt.setString(4,user.getUsername());
+		this.pstmt.executeQuery() ;
+	}
+	
 	
 	
 	

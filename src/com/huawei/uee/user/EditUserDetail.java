@@ -24,18 +24,24 @@ public class EditUserDetail extends HttpServlet
 	{
 		String path = "EditUserDetail.jsp" ;
 		String username = request.getParameter("username") ;
+		int age = Integer.parseInt(request.getParameter("age")) ;
+		int money = Integer.parseInt(request.getParameter("money")) ;
+		String description = request.getParameter("description") ;
+		
 		User user = new User();
 		user.setUsername(username);
-		List<User> users = null;
+		user.setAge(age);
+		user.setMoney(money);
+		user.setDescription(description);
+		
 		try
 		{
-			users = DAOFactory.getUserDAOInstance().selectUsersByUsername(user.getUsername());
+			DAOFactory.getUserDAOInstance().updateUser(user);
 		} catch (Exception e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		user = users.get(0);
 		System.out.println(user.getAge());
 		
 		HttpSession session = request.getSession();
