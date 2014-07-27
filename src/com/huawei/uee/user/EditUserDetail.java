@@ -28,7 +28,7 @@ public class EditUserDetail extends HttpServlet
 		String description = request.getParameter("description") ;
 		
 		HttpSession session = request.getSession();
-		User user = (User)session.getAttribute("user");
+		User user = (User)session.getAttribute("detailUser");
 		user.setUsername(username);
 		user.setAge(age);
 		user.setMoney(money);

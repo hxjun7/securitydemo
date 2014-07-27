@@ -8,7 +8,7 @@ form {
   font-size: 1.4em;
 	width: 40em;
  position:relative;
-	 top:200px;
+	 top:50px;
 	 left:50%;
 	 margin:0 0 0 -20em;
 }

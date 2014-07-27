@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
- <% User user = (User)session.getAttribute("user"); %> 
+ <% User user = (User)session.getAttribute("detailUser"); %> 
  <%request.setCharacterEncoding("UTF-8") ;%>
  <%-- user.setUsername("<script>alert(123)</script>");--%>
   </head>

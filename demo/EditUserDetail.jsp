@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
- <%User user = (User)session.getAttribute("user"); %> 
+ <%User user = (User)session.getAttribute("detailUser"); %> 
  <%request.setCharacterEncoding("UTF-8") ;%>
  <%-- user.setUsername("<script>alert(123)</script>");--%>
   </head>
@@ -41,7 +41,7 @@
 	<br/>
 	<br/>
 	<br/>
-	<p>转账功能：</p>
+	<p>转账：</p>
 	<form action="TransferAccounts" method="get">
 	
 	<input type="hidden" name="fromUsername" value="<%=user.getUsername()%>"></input>

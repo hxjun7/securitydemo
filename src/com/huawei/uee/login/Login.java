@@ -40,31 +40,33 @@ public class Login extends HttpServlet
 		// 里面没有记录任何的错误
 		if(info.size()==0)
 		{	
-			User user = new User() ;
-			user.setUsername(username) ;
-			user.setPassword(password) ;
+			User loginUser = new User() ;
+			loginUser.setUsername(username) ;
+			loginUser.setPassword(password) ;
 			try{
-				if(DAOFactory.getUserDAOInstance().isVaildUser(user))
+				if(DAOFactory.getUserDAOInstance().isVaildUser(loginUser))
 				{
 					List<User> users = null;
 					try
 					{
-						users = DAOFactory.getUserDAOInstance().selectUsersByUsername(user.getUsername());
+						users = DAOFactory.getUserDAOInstance().selectUsersByUsername(loginUser.getUsername());
 					} catch (Exception e)
 					{
 						e.printStackTrace();
 					}
-					user = users.get(0);
+					loginUser = users.get(0);
 					
 					//将用户信息存入session
 					HttpSession session = request.getSession();
-					session.setAttribute("user",user) ;
+					session.setAttribute("loginUser",loginUser) ;
 					
 					//选择跳转页面，经理或者普通员工
-					if(user.getUsername().equals("manager"))
+					if(loginUser.getUsername().equals("manager"))
 					{
+//						response.sendRedirect("manager.jsp");
 						request.getRequestDispatcher("manager.jsp").forward(request,response) ;
 					}else{
+//						response.sendRedirect("staff.jsp");
 						request.getRequestDispatcher("staff.jsp").forward(request,response) ;
 					}
 					return;

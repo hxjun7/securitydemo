@@ -27,7 +27,7 @@ public class LoginFilter implements Filter
 		String requestURI = r.getRequestURI();
 
 		if (requestURI.endsWith("login.jsp")
-				|| requestURI.endsWith("MyLoginServlet"))
+				|| requestURI.endsWith("Login"))
 		{
 			chain.doFilter(request, response);
 			return;
@@ -35,7 +35,7 @@ public class LoginFilter implements Filter
 
 		HttpSession session = r.getSession();
 
-		if (null == session.getAttribute("user"))
+		if (null == session.getAttribute("loginUser"))
 		{
 			((HttpServletResponse) response).sendRedirect("login.jsp");
 			return;
