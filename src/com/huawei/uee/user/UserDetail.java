@@ -22,8 +22,8 @@ public class UserDetail extends HttpServlet
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
-		String viewPath = "ViewUserDetail.jsp" ;
-		String editPath = "EditUserDetail.jsp";
+		String viewPath = "view_user_detail.jsp" ;
+		String editPath = "edit_user_detail.jsp";
 		String username = request.getParameter("username") ;
 		String opermode = request.getParameter("opermode") ;
 		User detailUser = new User();
