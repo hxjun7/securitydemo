@@ -7,6 +7,9 @@
  <% User user = (User)session.getAttribute("detailUser"); %> 
  <%request.setCharacterEncoding("UTF-8") ;%>
  <%-- user.setUsername("<script>alert(123)</script>");--%>
+ <style>
+.td{width:200px;}
+</style>
   </head>
   
   <body>
