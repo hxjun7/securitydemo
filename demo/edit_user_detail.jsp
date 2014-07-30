@@ -34,13 +34,8 @@
 				<td><input type="text" name="description" value="<%=user.getDescription()%>"></input></td>
 			</tr>
 		</table>
-		<br/>
-		<input type="submit" value="提交"/>
+		<p><input type="submit" value="提交"/></p>
 	</form>
-	
-	<br/>
-	<br/>
-	<br/>
 	<p>转账：</p>
 	<form action="TransferAccounts" method="get">
 	
@@ -50,6 +45,8 @@
 	<input type="submit" value="转账"></input>
 	
 	</form>
+	<br/>
+	<a href="logout.jsp">注销</a>
   
   </body>
 </html>

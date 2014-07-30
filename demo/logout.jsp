@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <% session.invalidate(); %>
 <title>注销</title>
 </head>
 <body>
